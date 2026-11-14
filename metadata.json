@@ -1,0 +1,22 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Custom Thermal Monitor"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "Full-featured live temperature monitor for CPU, cores, motherboard, NVMe, and GPU sensors.",
+        "Icon": "thermometer",
+        "Id": "com.custom.thermalmonitor",
+        "License": "GPL-3.0",
+        "Name": "Thermal Monitor Pro",
+        "Version": "1.0.0",
+        "Website": "https://kde.org"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.systemmonitor"
+    ]
+}
