@@ -1,0 +1,14 @@
+# Build output
+dist/
+*.plasmoid
+
+# Python (scripts, validation helpers)
+__pycache__/
+*.py[cod]
+
+# Editor / OS noise
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
