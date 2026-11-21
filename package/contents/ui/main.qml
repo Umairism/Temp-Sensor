@@ -50,12 +50,20 @@ PlasmoidItem {
         ? fullRepresentation
         : compactRepresentation
     Plasmoid.backgroundHints: PlasmaCore.Types.DefaultBackground | PlasmaCore.Types.ConfigurableBackground
-    Plasmoid.toolTipMainText: i18n("Thermal Monitor Pro")
-    Plasmoid.toolTipSubText: i18n("No temperature readings yet")
+    // tooltip properties live directly on PlasmoidItem (not on the Plasmoid
+    // attached object) since Plasma 6
+    toolTipMainText: i18n("Thermal Monitor Pro")
+    toolTipSubText: root.hottestLabel()
 
     // ------------------------------------------------------------------
     // Helpers
     // ------------------------------------------------------------------
+    function hottestLabel() {
+        return isNaN(root.maxObservedTemp)
+            ? i18n("No temperature readings yet")
+            : i18n("Hottest sensor: %1", formatTemp(root.maxObservedTemp))
+    }
+
     function formatTemp(celsius) {
         if (celsius === undefined || celsius === null || isNaN(celsius)) {
             return "--"
@@ -115,9 +123,6 @@ PlasmoidItem {
             }
         }
         root.maxObservedTemp = max
-        Plasmoid.toolTipSubText = isNaN(max)
-            ? i18n("No temperature readings yet")
-            : i18n("Hottest sensor: %1", formatTemp(max))
     }
 
     function sendNotification(summary, body) {
@@ -321,7 +326,7 @@ PlasmoidItem {
         Layout.minimumWidth: compactRow.implicitWidth + Kirigami.Units.smallSpacing * 2
         Layout.minimumHeight: Kirigami.Units.iconSizes.small
         Accessible.name: Plasmoid.toolTipMainText
-        Accessible.description: Plasmoid.toolTipSubText
+        Accessible.description: root.hottestLabel()
         onClicked: root.expanded = !root.expanded
 
         RowLayout {
