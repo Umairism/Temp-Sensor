@@ -46,9 +46,12 @@ PlasmoidItem {
     // spamming failing commands on every sample.
     property bool notificationsUnavailable: false
 
-    preferredRepresentation: Plasmoid.formFactor === PlasmaCore.Types.Planar
-        ? fullRepresentation
-        : compactRepresentation
+    // Use the full dashboard everywhere except in edge panels.
+    // (plasmawindowed, useful for testing, reports FormFactor.Application.)
+    preferredRepresentation: (Plasmoid.formFactor === PlasmaCore.Types.Horizontal
+                              || Plasmoid.formFactor === PlasmaCore.Types.Vertical)
+        ? compactRepresentation
+        : fullRepresentation
     Plasmoid.backgroundHints: PlasmaCore.Types.DefaultBackground | PlasmaCore.Types.ConfigurableBackground
     // tooltip properties live directly on PlasmoidItem (not on the Plasmoid
     // attached object) since Plasma 6
