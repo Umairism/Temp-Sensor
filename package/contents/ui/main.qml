@@ -9,7 +9,6 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
-import org.kde.plasma.components as PlasmaComponents
 import org.kde.kirigami as Kirigami
 import org.kde.ksysguard.sensors as Sensors
 import org.kde.plasma.plasma5support as Plasma5Support
@@ -336,7 +335,7 @@ PlasmoidItem {
                 Layout.preferredHeight: Kirigami.Units.iconSizes.small
             }
 
-            PlasmaComponents.Label {
+            QQC2.Label {
                 text: root.formatTemp(root.maxObservedTemp)
                 font.bold: true
                 color: root.tempColor(root.maxObservedTemp)
@@ -360,14 +359,14 @@ PlasmoidItem {
             opacity: 0.4
         }
 
-        PlasmaComponents.Label {
+        QQC2.Label {
             Layout.alignment: Qt.AlignHCenter
             text: i18n("No temperature sensors found")
             font.bold: true
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
         }
 
-        PlasmaComponents.Label {
+        QQC2.Label {
             Layout.alignment: Qt.AlignHCenter
             Layout.fillWidth: true
             Layout.maximumWidth: Kirigami.Units.gridUnit * 18
@@ -405,13 +404,13 @@ PlasmoidItem {
                 Layout.fillWidth: true
                 spacing: 0
 
-                PlasmaComponents.Label {
+                QQC2.Label {
                     text: i18n("Thermal Monitor")
                     font.bold: true
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
                 }
 
-                PlasmaComponents.Label {
+                QQC2.Label {
                     text: root.sensorList.length > 0
                         ? i18np("%1 active sensor", "%1 active sensors", root.sensorList.length)
                         : i18n("Scanning for sensors…")
@@ -420,7 +419,7 @@ PlasmoidItem {
                 }
             }
 
-            PlasmaComponents.Label {
+            QQC2.Label {
                 text: root.formatTemp(root.maxObservedTemp)
                 font.bold: true
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.3
@@ -477,14 +476,14 @@ PlasmoidItem {
                             RowLayout {
                                 Layout.fillWidth: true
 
-                                PlasmaComponents.Label {
+                                QQC2.Label {
                                     Layout.fillWidth: true
                                     text: modelData.label
                                     elide: Text.ElideRight
                                     font.pointSize: Kirigami.Theme.smallFont.pointSize * 1.05
                                 }
 
-                                PlasmaComponents.Label {
+                                QQC2.Label {
                                     text: root.formatTemp(sensorDelegate.currentTemp)
                                     font.bold: true
                                     color: root.tempColor(sensorDelegate.currentTemp)
@@ -513,7 +512,7 @@ PlasmoidItem {
                                 }
                             }
 
-                            PlasmaComponents.Label {
+                            QQC2.Label {
                                 visible: root.showSensorPaths
                                 text: modelData.id
                                 opacity: 0.5
@@ -528,7 +527,7 @@ PlasmoidItem {
         }
 
         // Footer: data source attribution
-        PlasmaComponents.Label {
+        QQC2.Label {
             Layout.fillWidth: true
             text: i18n("Source: ksystemstats (lm_sensors / kcoretemp)")
             opacity: 0.4

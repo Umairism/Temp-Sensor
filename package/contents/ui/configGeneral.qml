@@ -9,7 +9,6 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 import org.kde.ksysguard.sensors as Sensors
-import org.kde.plasma.components as PlasmaComponents
 
 KCM.SimpleKCM {
     id: root
@@ -191,7 +190,7 @@ KCM.SimpleKCM {
         RowLayout {
             Layout.fillWidth: true
 
-            PlasmaComponents.Label {
+            QQC2.Label {
                 text: i18n("Sensors to show")
                 font.bold: true
             }
@@ -205,7 +204,7 @@ KCM.SimpleKCM {
             }
         }
 
-        PlasmaComponents.Label {
+        QQC2.Label {
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
             opacity: 0.7
@@ -244,7 +243,7 @@ KCM.SimpleKCM {
             }
         }
 
-        PlasmaComponents.Label {
+        QQC2.Label {
             id: sensorListEmpty
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
