@@ -168,7 +168,7 @@ PlasmoidItem {
         refreshMaxTemp()
     }
 
-    function sensorListChanged(a, b) {
+    function sensorListEquals(a, b) {
         if (a.length !== b.length) {
             return true
         }
@@ -256,7 +256,7 @@ PlasmoidItem {
 
         // Reassign only on real change so delegates (and their live Sensor
         // objects) are not needlessly recreated on every re-scan.
-        if (sensorListChanged(root.sensorList, found)) {
+        if (sensorListEquals(root.sensorList, found)) {
             var keep = {}
             for (var k = 0; k < found.length; k++) {
                 keep[found[k].id] = true
