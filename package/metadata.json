@@ -3,20 +3,30 @@
     "KPlugin": {
         "Authors": [
             {
-                "Name": "Custom Thermal Monitor"
+                "Name": "Umairism",
+                "Email": "iamumair1124@gmail.com"
             }
         ],
         "Category": "System Information",
-        "Description": "Full-featured live temperature monitor for CPU, cores, motherboard, NVMe, and GPU sensors.",
+        "Description": "Live CPU, GPU, NVMe and motherboard temperatures with color-coded gauges, configurable warning and critical thresholds, per-sensor selection, and optional critical-temperature notifications.",
         "Icon": "thermometer",
-        "Id": "com.custom.thermalmonitor",
-        "License": "GPL-3.0",
+        "Id": "com.github.umairism.thermalmonitor",
+        "Keywords": [
+            "temperature",
+            "thermal",
+            "sensors",
+            "cpu",
+            "gpu",
+            "nvme",
+            "lm_sensors",
+            "ksystemstats",
+            "monitor"
+        ],
+        "License": "GPL-3.0-or-later",
         "Name": "Thermal Monitor Pro",
-        "Version": "1.0.0",
-        "Website": "https://kde.org"
+        "Version": "1.1.0",
+        "Website": "https://github.com/Umairism/Temp-Sensor",
+        "BugReportUrl": "https://github.com/Umairism/Temp-Sensor/issues"
     },
-    "X-Plasma-API-Minimum-Version": "6.0",
-    "X-Plasma-Provides": [
-        "org.kde.plasma.systemmonitor"
-    ]
+    "X-Plasma-API-Minimum-Version": "6.0"
 }

@@ -23,5 +23,11 @@
         <entry name="maxSensors" type="Int">
             <default>12</default>
         </entry>
+        <entry name="enabledSensors" type="String">
+            <default></default>
+        </entry>
+        <entry name="notifyCritical" type="Bool">
+            <default>true</default>
+        </entry>
     </group>
 </kcfg>
